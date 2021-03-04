@@ -1,0 +1,20 @@
+body {
+    background-color: #4B8EBB;
+  }
+  
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+    color:#F1FF29;
+    margin-left: 20px;
+    font-weight: 700;
+    font-size: 40px;
+    margin-bottom: 0%;
+  }
+  h2{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 20px ;
+    color: #154666;
+    margin-left: 25px;
+    margin-top: 0%;
+  } 
