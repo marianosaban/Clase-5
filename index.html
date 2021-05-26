@@ -16,21 +16,20 @@
         <h2>Elegí los componentes de tu bici y te pasamos una cotización aproximada</h2>
     </div>
      <div class="container">
-    
         <img id=cambiaFoto src='IMAGENES/bici_cuadro_negro.png' alt="La bici"style="width:500px;">
        <p>Elegí el color</p>
         <div class="botonera" id="botonColor">
-            <div class="boton" style="background-color: black" value="negra" onclick="cambiaColor('IMAGENES/bici_cuadro_negro.png'); escribeColor('Negra')"></div>
-            <div class="boton" style="background-color: white" value="blanca" onclick="cambiaColor('IMAGENES/bici_cuadro_blanco.png');escribeColor('blanca')"></div>
-            <div class="boton" style="background-color: red" value="roja" onclick="cambiaColor('IMAGENES/bici_cuadro_rojo.png');escribeColor('roja')"></div>
-            <div class="boton" style="background-color: green" value="verde" onclick="cambiaColor('IMAGENES/bici_cuadro_verde.png');escribeColor('verde')"></div>
-            <div class="boton" style="background-color: blue" value="azul" onclick="cambiaColor('IMAGENES/bici_cuadro_azul.png');escribeColor('azul')"></div>
+            <button id="botonNegro" class="boton" style="background-color: black" value="negra"></button>
+            <button id="botonBlanco" class="boton" style="background-color: white" value="blanca"></button>
+            <button id="botonRojo"class="boton" style="background-color: red" value="roja" ></button>
+            <button id="botonVerde" class="boton" style="background-color: green" value="verde"></button>
+            <button id="botonAzul" class="boton" style="background-color: blue" value="azul" ></button>
         </div>
     </div>
    
     <div class="container"><label for="transmision">Tipo de transmision</label>
     <p>
-    <select class="form-select"id="transmision" onchange="escribeColor()">
+    <select class="form-select"id="transmision">
           <option class="option" value="Piñon Fijo">Piñon fijo</option>
           <option class="option" value="con transmisión Libre">Rueda libre</option>
           <option class="option" value="con 6 Cambios">6 cambios</option>
@@ -38,15 +37,15 @@
     </p>
     <p>
         <label for="RuedaDel">Tipo de Rueda delantera:</label>
-        <select class="form-select"id="RuedaDel" onchange="actualizar()">
-            <option class="option" value="triple pared">Triple pared</option>
+        <select class="form-select"id="RuedaDel">
+        <option class="option" value="triple pared">Triple pared</option>
             <option class="option" value="perfil alto">Perfil Alto</option>
             <option class="option" value="normal">Normal</option>
         </select>
     </p>    
     <p>
         <label for="RuedaTras">Tipo de Rueda trasera:</label>
-        <select class="form-select"id="RuedaTras" onchange="actualizar()">
+        <select class="form-select"id="RuedaTras">
             <option class="option" value="triple pared">Triple pared</option>
             <option class="option" value="perfil alto">Perfil Alto</option>
             <option class="option" value="normal">Normal</option>
