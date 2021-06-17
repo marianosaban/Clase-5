@@ -45,7 +45,11 @@ function actualizar(){
     var transmisionElegida= $("#transmision").val();
     var ruedaDelElegida= $("#RuedaDel").val();
     var ruedaTrasElegida=$("#RuedaTras").val();
-    $("#resultado").html("Cotizaremos una bicicleta " + transmisionElegida + ", con una rueda delantera " + ruedaDelElegida + " y una rueda trasera " + ruedaTrasElegida) 
+    $("#resultado").html("Cotizaremos una bicicleta " + transmisionElegida + ", con una rueda delantera " + ruedaDelElegida + " y una rueda trasera " + ruedaTrasElegida);
+    $("#cambios").fadeIn(500);
+    $("#cambios").fadeOut(500);
+    
+
 }
 
 /* function escribeColor(colorNuevo){
