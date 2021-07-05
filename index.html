@@ -1,61 +1,128 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entregable 1</title>
-    <link rel="stylesheet" href="estilo.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-</head>
-<body class="p-3 mb-2 bg-primary text-white">
-    <h1>Cotizador Fixie</h1>
-    <div id="container">
-        <h2>Elegí los componentes de tu bici y te pasamos una cotización aproximada</h2>
-    </div>
-     <div class="container">
-        <img id=cambiaFoto src='IMAGENES/bici_cuadro_negro.png' alt="La bici"style="width:500px;">
-       <p>Elegí el color</p>
-        <div class="botonera" id="botonColor">
-            <button id="botonNegro" class="boton" style="background-color: black" value="negra"></button>
-            <button id="botonBlanco" class="boton" style="background-color: white" value="blanca"></button>
-            <button id="botonRojo"class="boton" style="background-color: red" value="roja" ></button>
-            <button id="botonVerde" class="boton" style="background-color: green" value="verde"></button>
-            <button id="botonAzul" class="boton" style="background-color: blue" value="azul" ></button>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mariano Saban. Cotizador bicis</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <link rel="stylesheet" href="estilo.css">
+    </head>
+    <body class="p-3 mb-2 bg-primary text-white">
+        <h1>Cotizador Bici</h1>
+        <div id="container">
+            <h2>Elegí los componentes y te pasamos una cotización</h2>
         </div>
+        <div class="container">
+            <img id=cambiaFoto src='IMAGENES/bici_cuadro_negro.png' alt="La bici"style="width:500px;">
+            <p>Elegí el color</p>
+            <div class="botonera" id="botonColor">
+                <button id="botonNegro" class="boton" style="background-color: black" value="negra"></button>
+                <button id="botonBlanco" class="boton" style="background-color: white" value="blanca"></button>
+                <button id="botonRojo"class="boton" style="background-color: red" value="roja" ></button>
+                <button id="botonVerde" class="boton" style="background-color: green" value="verde"></button>
+                <button id="botonAzul" class="boton" style="background-color: blue" value="azul" ></button>
+            </div>
+        </div>
+        <div class="container">
+            <p id="cambios" class="alert alert-success">Hiciste un cambio en tu selección</p> 
+            <p id="resultado"class="alert alert-primary">Tu bici elegida</p> 
+            <div class="container">
+                <p>    
+                    <label for="transmision">Tipo de transmision</label>  
+                    <select class="form-select"id="transmision">
+                        <option class="option" value="Piñon Fijo">Piñon fijo</option>
+                        <option class="option" value="con transmisión Libre">Rueda libre</option>
+                        <option class="option" value="con 6 Cambios">6 cambios ($20000 adicionales)</option>
+                    </select>
+                </p>
+            </div>
+            <div class="container">
+                <label for="RuedaDel">Tipo de Rueda delantera:</label>
+                <div class="row">
+                    <div class="col-md-4 col-lg-4 col-sm-4">
+                        <label>
+                            <input type="radio" class="card-input-element" name="RuedaDel" value="Normal" checked>
+                            <div class="panel panel-default card-input">
+                                <div class="panel-heading">Normal</div>
+                                <div class="panel-body">
+                                    <img src="/IMAGENES/ruedas/normal.jpg"alt="rueda normal" class="img-fluid">
+                                    <h3>Incluido</h3>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-sm-4">
+                        <label>
+                            <input type="radio"class="card-input-element"name="RuedaDel" value="Triple pared" >
+                            <div class="panel panel-default card-input">
+                                <div class="panel-heading">Triple pared</div>
+                                <div class="panel-body">
+                                    <img src="/IMAGENES/ruedas/triplepared.jpg"alt="rueda normal" class="img-fluid">
+                                    <h3>$2000 adicionales</h3>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-sm-4">
+                        <label>
+                            <input type="radio" class="card-input-element"name="RuedaDel" value="Perfil Alto" >
+                            <div class="panel panel-default card-input">
+                                <div class="panel-heading">Perfil Alto</div>
+                                <div class="panel-body">
+                                    <img src="/IMAGENES/ruedas/perfilalto.jpg"alt="rueda normal" class="img-fluid">
+                                    <h3>$5000 adicionales</h3>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <label for="RuedaDel">Tipo de Rueda Trasera:</label>
+                <div class="row">
+                    <div class="col-md-4 col-lg-4 col-sm-4">
+                        <label>
+                            <input type="radio"class="card-input-element" name="RuedaTras" value="Normal" checked>
+                            <div class="panel panel-default card-input">
+                                <div class="panel-heading">Normal</div>
+                                <div class="panel-body">
+                                    <img src="/IMAGENES/ruedas/normal.jpg"alt="rueda normal" class="img-fluid">
+                                    <h3>Incluido</h3>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-sm-4">
+                        <label>
+                            <input type="radio" class="card-input-element"name="RuedaTras" value="Triple pared" >
+                            <div class="panel panel-default card-input">
+                                <div class="panel-heading">Triple pared</div>
+                                <div class="panel-body">
+                                    <img src="/IMAGENES/ruedas/triplepared.jpg"alt="rueda normal" class="img-fluid">
+                                    <h3>$2000 adicionales</h3>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-sm-4">
+                        <label>
+                            <input type="radio" class="card-input-element" name="RuedaTras" value="Perfil Alto" >
+                            <div class="panel panel-default card-input">
+                                <div class="panel-heading">Perfil Alto</div>
+                                <div class="panel-body">
+                                    <img src="/IMAGENES/ruedas/perfilalto.jpg"alt="rueda normal" class="img-fluid">
+                                    <h3>$5000 adicionales</h3>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
     </div>
-    <p id="cambios">hiciste un cambio en tu selección</p>  
-    <div class="container"><label for="transmision">Tipo de transmision</label>
-    <p>
-    <select class="form-select"id="transmision">
-          <option class="option" value="Piñon Fijo">Piñon fijo</option>
-          <option class="option" value="con transmisión Libre">Rueda libre</option>
-          <option class="option" value="con 6 Cambios">6 cambios</option>
-    </select>
-    </p>
-    <p>
-        <label for="RuedaDel">Tipo de Rueda delantera:</label>
-        <select class="form-select"id="RuedaDel">
-        <option class="option" value="triple pared">Triple pared</option>
-            <option class="option" value="perfil alto">Perfil Alto</option>
-            <option class="option" value="normal">Normal</option>
-        </select>
-    </p>    
-    <p>
-        <label for="RuedaTras">Tipo de Rueda trasera:</label>
-        <select class="form-select"id="RuedaTras">
-            <option class="option" value="triple pared">Triple pared</option>
-            <option class="option" value="perfil alto">Perfil Alto</option>
-            <option class="option" value="normal">Normal</option>
-        </select>
-    </p>
-
-    <p id="resultado">Tu bici elegida</p>
-  </div>
     <script src="JS/jquery-3.6.0.min.js"></script>
     <script src="JS/script.js"></script>
-
-</body>
+    </body>
 </html>
