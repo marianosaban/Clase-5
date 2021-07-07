@@ -11,27 +11,27 @@ function cambiarImagen(){
     foto = document.getElementById("cambiaFoto");
     var boton = this.id;
     if (boton === "botonNegro") {
-            foto.src = "IMAGENES/bici_cuadro_negro.png";
+            foto.src = "../IMAGENES/bici_cuadro_negro.png";
             colorActual="negra";
             actualizar()
         }
         else if (boton === "botonBlanco") {
-            foto.src = "IMAGENES/bici_cuadro_blanco.png";
+            foto.src = "../IMAGENES/bici_cuadro_blanco.png";
             colorActual="blanca";
             actualizar()
         }
         else if (boton === "botonRojo") {
-            foto.src = "IMAGENES/bici_cuadro_rojo.png";
+            foto.src = "../IMAGENES/bici_cuadro_rojo.png";
             colorActual="roja";
             actualizar()
         }
         else if (boton === "botonVerde") {
-            foto.src = "IMAGENES/bici_cuadro_verde.png";
+            foto.src = "../IMAGENES/bici_cuadro_verde.png";
             colorActual="verde";
             actualizar()
         }
         else if (boton === "botonAzul") {
-            foto.src = "IMAGENES/bici_cuadro_azul.png";
+            foto.src = "../IMAGENES/bici_cuadro_azul.png";
             colorActual="azul";
             actualizar()
         }
