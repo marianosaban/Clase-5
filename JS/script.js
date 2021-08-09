@@ -88,5 +88,5 @@ function cambiarImagen(){
             actualizar()
         }
     }
-  } 
+ 
 
