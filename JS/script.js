@@ -6,7 +6,59 @@ let ruedaDel = $('[name="RuedaDel"]');
 ruedaDel.change(actualizar);
 let ruedaTras = $('[name="RuedaTras"]');
 ruedaTras.change(actualizar);
-
+function Bici(colorActual, transmision, ruedaDel, ruedaTras) 
+{
+    this.colorActual = colorActual;
+    this.transmision = transmision;
+    this.ruedaDel = ruedaDel;
+    this.ruedaTras = ruedaTras;   
+}
+var bici="todavia no has hecho una primera seleccion";
+localStorage.setItem('datos',JSON.stringify(bici));
+$("#botonNegro").click(cambiarImagen);
+$("#botonBlanco").click(cambiarImagen);
+$("#botonRojo").click(cambiarImagen);
+$("#botonVerde").click(cambiarImagen);
+$("#botonAzul").click(cambiarImagen);
+$("#botonGuardar").click(cotizar);
+function actualizar(){
+    precio = 50000;
+    var transmisionElegida= $("#transmision").val();
+    if (transmisionElegida === "con 6 cambios"){
+        precio=precio+20000
+    };
+    var ruedaDelElegida= $('[name="RuedaDel"]:checked').val();
+    if (ruedaDelElegida === "triple pared"){
+        precio=precio+2000
+    }
+    else if(ruedaDelElegida === "perfil alto"){
+        precio=precio+5000
+    }
+    var ruedaTrasElegida=$('[name="RuedaTras"]:checked').val();
+    if (ruedaTrasElegida === "triple pared"){
+        precio=precio+2000
+    }
+    else if(ruedaTrasElegida === "perfil alto"){
+        precio=precio+5000
+    }
+    bici = new Bici(colorActual,transmisionElegida,ruedaDelElegida,ruedaTrasElegida);
+}
+function cotizacionAnterior(){
+    let datosCotizados = localStorage.getItem('datos');
+    let biciCotizada = JSON.parse(datosCotizados); 
+    if (biciCotizada.transmision === undefined) {
+        $("#cotizacionAnterior").html("Aqui verás la consulta anterior que hiciste para que puedas comparar");
+    } else {
+        $("#cotizacionAnterior").html("(Tu consulta anterior fue por "+ biciCotizada.colorActual+ ", "+ biciCotizada.transmision + ", con una rueda delantera " +biciCotizada.ruedaDel + " y una rueda trasera " +biciCotizada.ruedaTras+" y valia : $" +localStorage.getItem('costo')+")");
+    }
+}
+function cotizar (){
+    cotizacionAnterior();
+    localStorage.clear;
+    localStorage.setItem('datos',JSON.stringify(bici));
+    localStorage.setItem('costo', precio);
+    $("#resultado").html("Bicicleta " + colorActual+ ", "+ bici.transmision + ", con una rueda delantera " +bici.ruedaDel + " y una rueda trasera " +bici.ruedaTras+" tiene un valor de: $"+localStorage.getItem('costo') );
+}
 function cambiarImagen(){
     foto = document.getElementById("cambiaFoto");
     var boton = this.id;
@@ -36,33 +88,5 @@ function cambiarImagen(){
             actualizar()
         }
     }
-$("#botonNegro").click(cambiarImagen);
-$("#botonBlanco").click(cambiarImagen);
-$("#botonRojo").click(cambiarImagen);
-$("#botonVerde").click(cambiarImagen);
-$("#botonAzul").click(cambiarImagen);
-function actualizar(){
-    precio = 50000;
-    var transmisionElegida= $("#transmision").val();
-    if (transmisionElegida === "con 6 cambios"){
-        precio=precio+20000
-    };
-    var ruedaDelElegida= $('[name="RuedaDel"]:checked').val();
-    if (ruedaDelElegida === "triple pared"){
-        precio=precio+2000
-    }
-    else if(ruedaDelElegida === "perfil alto"){
-        precio=precio+5000
-    }
-    var ruedaTrasElegida=$('[name="RuedaTras"]:checked').val();
-    if (ruedaTrasElegida === "triple pared"){
-        precio=precio+2000
-    }
-    else if(ruedaTrasElegida === "perfil alto"){
-        precio=precio+5000
-    }
-    $("#resultado").html("Cotizaremos una bicicleta " + colorActual+ ", "+ transmisionElegida + ", con una rueda delantera " + ruedaDelElegida + " y una rueda trasera " + ruedaTrasElegida);
-    $("#resultadoPesos").html("el valor total de tu configuracion actual es de $" +precio );
-    $("#cambios").fadeIn(500);
-    $("#cambios").fadeOut(500);
-}
+  } 
+

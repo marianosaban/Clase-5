@@ -109,4 +109,6 @@ label {
    box-shadow: 0 0 0 3px #F1FF29;
 }
 
-
+.alert-dark{
+  font-size: 0.7em ;
+}

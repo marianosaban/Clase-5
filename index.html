@@ -19,14 +19,13 @@
             <div class="col-md-8">
             <img id=cambiaFoto src='IMAGENES/bici_cuadro_negro.png' alt="La bici"style="width:500px;">
             <p>Elegí el color</p>
-            <div class="botonera" id="botonColor">
-                <button id="botonNegro" class="boton" style="background-color: black" value="negra"></button>
-                <button id="botonBlanco" class="boton" style="background-color: white" value="blanca"></button>
-                <button id="botonRojo"class="boton" style="background-color: red" value="roja" ></button>
-                <button id="botonVerde" class="boton" style="background-color: green" value="verde"></button>
-                <button id="botonAzul" class="boton" style="background-color: blue" value="azul" ></button>
-            </div>
-            <p id="resultado"class="alert alert-primary">Tu bici elegida</p> 
+                <div class="botonera" id="botonColor">
+                    <button id="botonNegro" class="boton" style="background-color: black" value="negra"></button>
+                    <button id="botonBlanco" class="boton" style="background-color: white" value="blanca"></button>
+                    <button id="botonRojo"class="boton" style="background-color: red" value="roja" ></button>
+                    <button id="botonVerde" class="boton" style="background-color: green" value="verde"></button>
+                    <button id="botonAzul" class="boton" style="background-color: blue" value="azul" ></button>
+                </div>
             </div>
             <div class="col">
             <div class="container">
@@ -120,12 +119,16 @@
         </div>
         </div>
     <div class="row">
-        <div id="resultadoPesos"class="alert alert-secondary">cotización</div>
-        <div id="cambios" class="alert alert-danger">Hiciste un cambio en tu selección</div> 
+        <button id="botonGuardar">Cotizar</button>
+        <p id="resultado"class="alert alert-primary">Tu bici elegida</p> 
+    <div id="cotizacionAnterior"class="alert alert-dark"></div>
+    <div id="cotizacionDolar"class="alert alert-dark"></div>
     </div>
+
 </div>
-    <script src="JS/jquery-3.6.0.min.js"></script>
-    <script src="JS/script.js"></script>
-    </body>
+
+ </body>
+ <script src="JS/jquery-3.6.0.min.js"></script>
+ <script src="JS/script.js"></script>
 
 </html>
